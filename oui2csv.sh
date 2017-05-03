@@ -22,4 +22,4 @@ if [ -z "$FILE" ]; then
 	exit 1
 fi
 
-cat "$FILE" | sed -n 's/^[[:space:]]*\([0-9a-fA-F]\{6\}\)[[:space:]]*(base 16)[[:space:]]*\(.*\)$/\1|\2/p'
+cat "$FILE" | sed -n 's/^[[:space:]]*\([0-9a-fA-F]\{6\}\)[[:space:]]*(base 16)[[:space:]]*\(.*\)$/\1|\2/p' | sed 's/\r$//'
